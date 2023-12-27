@@ -1,0 +1,262 @@
+/* 헤더 */
+header {border-bottom: 1px solid var(--color-gray-100);}
+
+.top_bar {background: var(--color-gray-100);}
+
+.top_bar ul {
+  display: flex;
+  margin: 0 auto; 
+  width: 1020px;
+  justify-content: flex-end;
+}
+
+.top_bar ul li {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--color-back);
+  padding: 8px 0;
+}
+
+.top_bar ul li:nth-child(3) {margin-right: 0;}
+
+.top_bar ul li:nth-child(4),
+.top_bar ul li:nth-child(5) {
+  order: -1;
+}
+
+.top_bar ul li:nth-child(5) {margin-right: auto;}
+
+.top_bar ul li a {
+  display: block;
+  margin-right: 8px;
+}
+
+.main_header {
+  display: grid;
+  width: 1020px;
+  height: 116px;
+  margin: 0 auto;
+  grid-template-columns: 110px 176px 516px 46px 46px;
+  grid-template-rows: 84px 32px;
+  grid-template-areas: 
+    "category logo search myCoupang cart"
+    "category linkList linkList myCoupang cart";
+  justify-content: space-between;
+}
+
+.main_header > * {
+  display: flex;
+}
+
+.main_header .button--category {
+  grid-area: category;
+  background: var(--color-blue-600) url("../../assets/icon/hamburger.svg") no-repeat center 30px;
+  color: var(--color-white);
+  font-size: 12px;
+  padding-top: 74px;
+  justify-content: center;
+}
+
+.main_header h1 {
+  grid-area: logo;
+  text-indent: -9999px;
+}
+
+.main_header h1 a {
+  display: block;
+  width: 176px;
+  height: 40px;
+  background: url("../../assets/logo/logo.svg") no-repeat center;
+  background-size: cover;
+}
+
+.main_header .search {
+  grid-area: search;
+  height: 40px;
+  border: 1px solid var(--color-blue-600);
+  margin-top: 34px;
+}
+
+.main_header .search > * {border: 0; outline: none;}
+
+.main_header .search select {
+  width: 135px;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--color-gray-700);
+  border-right: 1px solid var(--color-gray-100);
+  padding-left: 8px;
+  appearance: none;
+  background: url("../../assets/icon/MoreDown.svg") no-repeat 118px center;
+}
+
+.main_header .search input {
+  width: 300px;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--color-gray-600);
+  padding-left: 10px;
+}
+
+.main_header .search button {
+  text-indent: -9999px;
+  width: 40px;
+}
+
+.search .mic_i {
+  background: url("../../assets/icon/mic.svg") no-repeat center;
+}
+
+.search .sear_i {
+  background: url("../../assets/icon/search.svg") no-repeat center;
+}
+
+.tool_tip {
+  display: none;
+  position: absolute;
+  font-weight: 400;
+  text-align: center;
+  color: var(--color-back);
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-300);
+  top: 90px;
+}
+
+.tool_tip::after {
+  border-color: var(--color-white) transparent;
+  border-style: solid;
+  border-width: 0 6px 8px 6.5px;
+  content: '';
+  display: block;
+  position: absolute;
+  top: -7px;
+  width: 0;
+  z-index: 1;
+}
+
+.tool_tip::before {
+  border-color: var(--color-gray-300) transparent;
+  border-style: solid;
+  border-width: 0 6px 8px 6.5px;
+  content: '';
+  display: block;
+  position: absolute;
+  top: -8px;
+  width: 0;
+  z-index: 0;
+}
+
+.main_header .myCoupang {
+  grid-area: myCoupang;
+  align-items: center;
+  position: relative;
+}
+
+.main_header .myCoupang button {
+  padding: 35px 0 0;
+  font-size: 12px;
+  font-weight: 400;
+  background: url("../../assets/icon/my-coupang.svg") no-repeat top center;
+}
+
+.main_header .myCoupang .tool_tip {
+  width: 90px;
+  font-size: 14px;
+  padding: 24px 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.main_header .myCoupang ul li {
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.main_header .myCoupang ul li:last-child {
+  margin-bottom: 0;
+}
+
+.main_header .myCoupang .tool_tip::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.main_header .myCoupang .tool_tip::before {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.myCoupang.is--active > .tool_tip {
+  display: block;
+}
+
+.main_header .cart {
+  position: relative;
+  grid-area: cart;
+  align-items: center;
+}
+
+.main_header .cart button {
+  padding: 35px 0 0;
+  font-size: 12px;
+  font-weight: 400;
+  background: url("../../assets/icon/cart.svg") no-repeat top center;
+}
+
+.main_header .cart span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 28px;
+  right: 4px;
+  width: 18px;
+  height: 18px;
+  background: var(--color-blue-600);
+  border-radius: 50%;
+  color: var(--color-white);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.main_header .cart .tool_tip {
+  width: 288px;
+  height: 99px;
+  font-size: 14px;
+  line-height: 99px;
+  right: 0;
+}
+
+.main_header .cart .tool_tip::after {right: 12px;}
+
+.main_header .cart .tool_tip::before {right: 12px;}
+
+.cart.cart--empty > .tool_tip {
+  display: block;
+}
+
+.main_header h1,
+.main_header .search {margin-bottom: 10px;}
+
+.main_header .link_list {
+  grid-area: linkList;
+  display: block;
+  font-size: 0px;
+}
+.main_header .link_list li {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--color-back);
+  display: inline-block;
+  margin-right: 29px;
+  margin-top: 6px;
+}
+.main_header .link_list li:last-child {margin-right: 0;}
+
+.link_list .rocket img {
+  margin-right: 4px;
+}
+
+.link_list .new img {
+  margin-left: 4px;
+}
